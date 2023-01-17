@@ -7,44 +7,44 @@ import usePetition from '../hooks/usePetition'
 
 function Cuadricula() {
 
-  //const API_URL = import.meta.env.VITE_API_URL;
-  //const [criptos, setCriptos] = useState([]);
+  const API_URL = import.meta.env.VITE_API_URL;
+  const [criptos, setCriptos] = useState([]);
 
-  const criptos = usePetition("assets")
-  // const fetchDatos = (url) =>{
-  //   fetch(url)
-  //   .then((resp)=>resp.json())
-  //   .then((data) => {
-  //     setCriptos(data.data)
-  //     console.log(data.data)
-  //   })
-  //   .catch(() => {
-  //     console.error("la peticion fallo")
-  //   })
-  // }
 
-  // useEffect(() => {
-  //   fetchDatos(`${API_URL}assets`);      
-  // }, [])
+  const fetchDatos = (url) => {
+    fetch(url)
+      .then((resp) => resp.json())
+      .then((data) => {
+        setCriptos(data.data)
+        console.log(data.data)
+      })
+      .catch(() => {
+        console.error("la peticion fallo")
+      })
+  }
+
+  useEffect(() => {
+    fetchDatos(`${API_URL}assets`);
+  }, [])
 
   if (!criptos) return <span>cargando...</span>
 
   return (
     <div className='app-container'>
-      
+
       <h1>Lista de criptomonedas</h1>
       <div className='cripto-container'>
         {
-          criptos.map(({id,name,priceUsd,symbol,changePercent24Hr}) => (
-            <Cripto 
-            key={id} 
-            name={name} 
-            priceUsd={priceUsd}
-            symbol={symbol}
-            changePercent24Hr={changePercent24Hr}
-            id={id} />
-        ))
-      }
+          criptos.map(({ id, name, priceUsd, symbol, changePercent24Hr }) => (
+            <Cripto
+              key={id}
+              name={name}
+              priceUsd={priceUsd}
+              symbol={symbol}
+              changePercent24Hr={changePercent24Hr}
+              id={id} />
+          ))
+        }
       </div>
     </div>
   )
