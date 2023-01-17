@@ -21,3 +21,10 @@
     color: white;
     text-decoration: none;
 }
+
+.positivo{
+    color: greenyellow;
+}
+.negativo{
+    color: rgba(255, 0, 0, 0.616);
+}
