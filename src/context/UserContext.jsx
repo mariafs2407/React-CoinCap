@@ -15,7 +15,7 @@ const UserContextProvider =({Children}) =>{
 
     return(
         <UserContext.Provider value={usuario}>
-            {/* vas a acceder a todos los hijso que tienen el componente */}
+            {/* vas a acceder a todos los hijos que tienen el componente */}
             {Children}
         </UserContext.Provider>
 

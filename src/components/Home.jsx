@@ -11,7 +11,7 @@ const Home = () => {
                 <h1 className='titulo'>¡Hola Bienvenido!</h1>
                 <p>Cónoce las 100 criptos mas usadas</p>
                 <p className='ruta'>
-                    <Link className='link' to="/Criptomonedas">Ver Criptomonedas ...</Link>
+                    <Link className='link ' to="/Criptomonedas">Ver Criptomonedas ...</Link>
                 </p>
             </div>
         </div>
